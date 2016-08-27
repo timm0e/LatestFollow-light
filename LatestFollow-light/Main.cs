@@ -9,13 +9,17 @@ namespace LatestFollow_light
 {
     public partial class Main : Form
     {
-        public Main()
+        public Main(String[] args)
         {
             InitializeComponent();
             txt_username.Text = Settings.Default.username;
             txt_path.Text = Settings.Default.path;
             num_interval.Value = Settings.Default.interval;
             num_spaces.Value = Settings.Default.spaces;
+            if (args[0] == "--active")
+            {
+                cb_active.Checked = true;
+            }
         }
 
         private void btn_browser_Click(object sender, EventArgs e)
