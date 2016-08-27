@@ -16,7 +16,7 @@ namespace LatestFollow_light
             txt_path.Text = Settings.Default.path;
             num_interval.Value = Settings.Default.interval;
             num_spaces.Value = Settings.Default.spaces;
-            if (args[0] == "--active")
+            if (args.Length> 0 && args[0] == "--active")
             {
                 cb_active.Checked = true;
             }
