@@ -70,5 +70,17 @@ namespace LatestFollow_light.Properties {
                 this["spaces"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string clientid {
+            get {
+                return ((string)(this["clientid"]));
+            }
+            set {
+                this["clientid"] = value;
+            }
+        }
     }
 }

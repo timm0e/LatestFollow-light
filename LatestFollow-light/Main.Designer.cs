@@ -40,6 +40,8 @@
             this.btn_browser = new System.Windows.Forms.Button();
             this.timer_main = new System.Windows.Forms.Timer(this.components);
             this.cb_active = new System.Windows.Forms.CheckBox();
+            this.txt_clid = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_interval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_spaces)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 70);
+            this.label3.Location = new System.Drawing.Point(12, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 4;
@@ -118,14 +120,14 @@
             // 
             // txt_path
             // 
-            this.txt_path.Location = new System.Drawing.Point(85, 70);
+            this.txt_path.Location = new System.Drawing.Point(85, 96);
             this.txt_path.Name = "txt_path";
             this.txt_path.Size = new System.Drawing.Size(281, 20);
             this.txt_path.TabIndex = 7;
             // 
             // btn_browser
             // 
-            this.btn_browser.Location = new System.Drawing.Point(373, 70);
+            this.btn_browser.Location = new System.Drawing.Point(373, 96);
             this.btn_browser.Name = "btn_browser";
             this.btn_browser.Size = new System.Drawing.Size(75, 23);
             this.btn_browser.TabIndex = 8;
@@ -140,7 +142,7 @@
             // cb_active
             // 
             this.cb_active.AutoSize = true;
-            this.cb_active.Location = new System.Drawing.Point(392, 99);
+            this.cb_active.Location = new System.Drawing.Point(392, 125);
             this.cb_active.Name = "cb_active";
             this.cb_active.Size = new System.Drawing.Size(56, 17);
             this.cb_active.TabIndex = 9;
@@ -148,11 +150,28 @@
             this.cb_active.UseVisualStyleBackColor = true;
             this.cb_active.CheckedChanged += new System.EventHandler(this.cb_active_CheckedChanged);
             // 
+            // txt_clid
+            // 
+            this.txt_clid.Location = new System.Drawing.Point(76, 58);
+            this.txt_clid.Name = "txt_clid";
+            this.txt_clid.PasswordChar = '*';
+            this.txt_clid.Size = new System.Drawing.Size(218, 20);
+            this.txt_clid.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Clientid:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 118);
+            this.ClientSize = new System.Drawing.Size(460, 147);
             this.Controls.Add(this.cb_active);
             this.Controls.Add(this.btn_browser);
             this.Controls.Add(this.txt_path);
@@ -161,7 +180,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.num_interval);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_clid);
             this.Controls.Add(this.txt_username);
             this.Name = "Main";
             this.Text = "LatestFollow-light";
@@ -186,6 +207,8 @@
         private System.Windows.Forms.Button btn_browser;
         private System.Windows.Forms.Timer timer_main;
         private System.Windows.Forms.CheckBox cb_active;
+        private System.Windows.Forms.TextBox txt_clid;
+        private System.Windows.Forms.Label label5;
     }
 }
 

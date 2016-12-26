@@ -14,6 +14,7 @@ namespace LatestFollow_light
             InitializeComponent();
             txt_username.Text = Settings.Default.username;
             txt_path.Text = Settings.Default.path;
+            txt_clid.Text = Settings.Default.clientid;
             num_interval.Value = Settings.Default.interval;
             num_spaces.Value = Settings.Default.spaces;
             if (args.Length> 0 && args[0] == "--active")
@@ -37,9 +38,12 @@ namespace LatestFollow_light
 
         private void timer_main_Tick(object sender, EventArgs e)
         {
+            WebClient wc = new WebClient();
+            wc.Headers.Add("Client-ID", txt_clid.Text);
+
             RootObject root =
                 JsonConvert.DeserializeObject<RootObject>(
-                    new WebClient().DownloadString(String.Format("https://api.twitch.tv/kraken/channels/{0}/follows",
+                    wc.DownloadString(String.Format("https://api.twitch.tv/kraken/channels/{0}/follows",
                         txt_username.Text)));
             StreamWriter sw = new StreamWriter(File.Open(txt_path.Text, FileMode.Create));
 
@@ -61,6 +65,7 @@ namespace LatestFollow_light
         {
             txt_username.Enabled = !cb_active.Checked;
             txt_path.Enabled = !cb_active.Checked;
+            txt_clid.Enabled = !cb_active.Checked;
             num_spaces.Enabled = !cb_active.Checked;
             num_interval.Enabled = !cb_active.Checked;
             btn_browser.Enabled = !cb_active.Checked;
@@ -77,6 +82,7 @@ namespace LatestFollow_light
             Settings.Default.path = txt_path.Text;
             Settings.Default.interval = num_interval.Value;
             Settings.Default.spaces = num_spaces.Value;
+            Settings.Default.clientid = txt_clid.Text;
             Settings.Default.Save();
         }
 
